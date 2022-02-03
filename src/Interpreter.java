@@ -180,10 +180,14 @@ public class Interpreter
                 eat(PLUS_OPERATOR);
                 result = result + term();
             }
-            else
+            else if(token.getType().equalsIgnoreCase((MINUS_OPERATOR)))
             {
                 eat(MINUS_OPERATOR);
                 result = result - term();
+            }else if(token.getType().equalsIgnoreCase((MULTIPLICATION_OPERATOR)))
+            {
+                eat(MULTIPLICATION_OPERATOR);
+                result = result * term();
             }
         }
         return result;
