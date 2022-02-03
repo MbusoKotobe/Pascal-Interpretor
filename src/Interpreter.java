@@ -1,6 +1,7 @@
 import java.io.EOFException;
 
-public class Interpreter<T> {
+public class Interpreter
+{
     private String text;
     private int position;
     private Token currentToken;
@@ -16,16 +17,16 @@ public class Interpreter<T> {
     private final static String MULTIPLICATION_OPERATOR = "MULTIPLICATION_OPERATOR";
     private final static String DIVISION_OPERATOR = "DIVISION_OPERATOR";
 
-    public Interpreter()
+    public Interpreter ()
     { }
 
-    public Interpreter(String text)
+    public Interpreter (String text)
     {
         this.text = text;
         this.currentChar = text.charAt(position);
     }
 
-    public Interpreter(String text, int position, Token current_token)
+    public Interpreter (String text, int position, Token current_token)
     {
         this.text = text;
         this.position = position;
