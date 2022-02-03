@@ -188,6 +188,10 @@ public class Interpreter
             {
                 eat(MULTIPLICATION_OPERATOR);
                 result = result * term();
+            }else if(token.getType().equalsIgnoreCase((DIVISION_OPERATOR)))
+            {
+                eat(DIVISION_OPERATOR);
+                result = result / term();
             }
         }
         return result;
