@@ -11,11 +11,13 @@ public class Interpreter
     private final static char MINUS_OPERATOR_SYMBOL = '-';
     private final static char MULTIPLICATION_OPERATOR_SYMBOL = '*';
     private final static char DIVISION_OPERATOR_SYMBOL = '/';
+    private final static char MODULUS_OPERATOR_SYMBOL = '%';
     private final static String INTEGER_TYPE = "INTEGER";
     private final static String PLUS_OPERATOR = "PLUS_OPERATOR";
     private final static String MINUS_OPERATOR = "MINUS_OPERATOR";
     private final static String MULTIPLICATION_OPERATOR = "MULTIPLICATION_OPERATOR";
     private final static String DIVISION_OPERATOR = "DIVISION_OPERATOR";
+    private final static String MODULUS_OPERATOR = "MODULUS_OPERATOR";
 
     public Interpreter ()
     { }
@@ -171,8 +173,14 @@ public class Interpreter
     {
         currentToken = getNextToken();
         var result = term();
-        while(currentToken.getType().equalsIgnoreCase(PLUS_OPERATOR) ||
-              currentToken.getType().equalsIgnoreCase(MINUS_OPERATOR)  )
+        while
+        (
+              currentToken.getType().equalsIgnoreCase(PLUS_OPERATOR)           ||
+              currentToken.getType().equalsIgnoreCase(MINUS_OPERATOR)          ||
+              currentToken.getType().equalsIgnoreCase(MULTIPLICATION_OPERATOR) ||
+              currentToken.getType().equalsIgnoreCase(DIVISION_OPERATOR)       ||
+              currentToken.getType().equalsIgnoreCase(MODULUS_OPERATOR)
+        )
         {
             var token = currentToken;
             if(token.getType().equalsIgnoreCase((PLUS_OPERATOR)))
@@ -192,6 +200,10 @@ public class Interpreter
             {
                 eat(DIVISION_OPERATOR);
                 result = result / term();
+            }else if(token.getType().equalsIgnoreCase((MODULUS_OPERATOR)))
+            {
+                eat(MODULUS_OPERATOR);
+                result = result % term();
             }
         }
         return result;
