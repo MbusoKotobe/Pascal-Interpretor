@@ -136,6 +136,11 @@ public class Interpreter
                 advance();
                 return new Token<Character>(DIVISION_OPERATOR, DIVISION_OPERATOR_SYMBOL);
             }
+            else if(currentChar == MODULUS_OPERATOR_SYMBOL)
+            {
+                advance();
+                return new Token<Character>(MODULUS_OPERATOR, MODULUS_OPERATOR_SYMBOL);
+            }
             else
             {
                 error();
