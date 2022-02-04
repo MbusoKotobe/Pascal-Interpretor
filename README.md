@@ -1,4 +1,4 @@
-# Pascal-Interpretor ###{FUN EDUCATIONAL PROJECT]
+# Pascal-Interpretor (FUN EDUCATIONAL PROJECT)
 This is a toy pascal interpretor which I am developing as a side project for fun when I have some spare time.
 
 # FEATURES
