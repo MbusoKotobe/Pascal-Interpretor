@@ -1,7 +1,15 @@
 # Pascal-Interpretor
-FUN EDUCATIONAL PROJECT /n
+## FUN EDUCATIONAL PROJECT /n
 This is a toy pascal interpretor which I am developing as a side project for fun when I have some spare time.
-Currently it only has a Lexer and an Interpretor in one place.
-It can perform simple computation like making tokens from user input and process the 
-tokens and return the result. Only basic arithmetic computation can be processed by
-the parser.
+
+# FEATURES
+The parser currently performs simple arithmatic computation:
+* Addition
+* Subtraction
+* Division
+* Modulo
+
+The parser can also process arbitrary expressions containing all the supported arithmetic 
+e.g *5 + 2 - 1 x 11 ÷ 2*
+
+#MORE WORK WILL BE ADDED WHEN I HAVE TIME.
