@@ -1,23 +1,10 @@
 import java.io.EOFException;
 
-public class Lexer
+public class Lexer implements ArithmeticOperators
 {
     private String text;
     private int position;
     private char currentChar;
-
-    //const members.
-    private final static char PLUS_OPERATOR_SYMBOL = '+';
-    private final static char MINUS_OPERATOR_SYMBOL = '-';
-    private final static char MULTIPLICATION_OPERATOR_SYMBOL = '*';
-    private final static char DIVISION_OPERATOR_SYMBOL = '/';
-    private final static char MODULUS_OPERATOR_SYMBOL = '%';
-    private final static String INTEGER_TYPE = "INTEGER";
-    private final static String PLUS_OPERATOR = "PLUS_OPERATOR";
-    private final static String MINUS_OPERATOR = "MINUS_OPERATOR";
-    private final static String MULTIPLICATION_OPERATOR = "MULTIPLICATION_OPERATOR";
-    private final static String DIVISION_OPERATOR = "DIVISION_OPERATOR";
-    private final static String MODULUS_OPERATOR = "MODULUS_OPERATOR";
 
     public Lexer ()
     {
